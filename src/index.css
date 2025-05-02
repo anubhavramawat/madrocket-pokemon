@@ -30,7 +30,7 @@ body {
     font-size: 16px;
   }
   
-  .pokemon-list {
+  .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
@@ -58,7 +58,7 @@ body {
     margin-top: 10px;
   }
   
-  .type {
+  .card {
     display: inline-block;
     background: #eee;
     padding: 4px 8px;
@@ -66,7 +66,208 @@ body {
     margin: 2px;
     font-size: 12px;
   }
+
+  .fav-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: gray;
+  }
+  .fav-btn.active {
+    color: gold;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
+
+  .details-container {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+
+  .back-button{
+    display: inline-block;
+  margin-bottom: 20px;
+  padding: 6px 16px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+
+  }
+  
+  .details-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+  }
+  
+  .pokemon-img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .pokemon-id {
+    color: gray;
+    font-size: 0.9em;
+  }
+  
+  .section {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .type-list,
+  .move-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .type-list li,
+  .move-list li {
+    background-color: #f0f0f0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.9em;
+  }
+  
+  .stats {
+    margin-top: 10px;
+  }
+  
+  .stat-bar {
+    margin-bottom: 10px;
+  }
+  
+  .bar {
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 18px;
+  }
+  
+  .fill {
+    background-color: #4caf50;
+    height: 100%;
+    color: white;
+    padding: 0 5px;
+    font-size: 0.8em;
+  }
+  
+
+  .comparison-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .input-section input {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+  }
+  
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .poke-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .poke-card img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .poke-id {
+    color: gray;
+    font-size: 0.9em;
+  }
+  
+  .types {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .type-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.9em;
+    color: white;
+    text-transform: capitalize;
+  }
+  
+  .stat-bar {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  
+  .stat-bar .bar {
+    background: #eee;
+    height: 18px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .stat-bar .fill {
+    background: #4caf50;
+    color: white;
+    font-size: 0.75em;
+    height: 100%;
+    padding: 0 6px;
+  }
+  
+  .placeholder {
+    background: #f5f5f5;
+    color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+  }
+  
+
   /* Responsive */
   @media (max-width: 600px) {
     .controls {

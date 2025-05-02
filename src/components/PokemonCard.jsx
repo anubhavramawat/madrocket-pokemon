@@ -1,19 +1,37 @@
-function PokemonCard({ pokemon }) {
-    return (
-      <div className="pokemon-card">
-        <img src={pokemon.image} alt={pokemon.name} />
-        <h3>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)} </h3>
-        <p>#{pokemon.id}</p>
-        <div className="types">
-          {pokemon.types.map((type) => (
-            <span key={type} className={`type ${type}`}>
-              {type}
-            </span>
-          ))}
-        </div>
+// src/components/PokemonCard.jsx
+import React, { useContext } from 'react'
+import { FavoritesContext } from '../contexts/FavoritesContext'
+import { Link } from 'react-router'
+
+const PokemonCard = ({ pokemon }) => {
+  const { favorites, toggleFavorite } = useContext(FavoritesContext)
+  const isFavorite = favorites.includes(pokemon.id)
+
+  return (
+    <div className="pokemon-card">
+      <div className="card-header">
+        <h3>{pokemon.name} #{pokemon.id}</h3>
+        <button
+          className={`fav-btn ${isFavorite ? 'active' : ''}`}
+          onClick={() => toggleFavorite(pokemon.id)}
+        >
+          {isFavorite ? '★' : '☆'}
+        </button>
       </div>
-    );
-  }
-  
-  export default PokemonCard;
-  
+
+      <Link to={`/pokemon/${pokemon.id}`}>
+        <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+      </Link>
+
+      <div className="types">
+        {pokemon.types.map(t => (
+          <span key={t.type.name} className={`type ${t.type.name}`}>
+            {t.type.name}
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default PokemonCard
